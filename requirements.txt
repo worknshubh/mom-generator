@@ -7,3 +7,4 @@ transformers
 torch
 reportlab
 python-docx
+langchain-mistralai
