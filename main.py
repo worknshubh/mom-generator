@@ -74,17 +74,16 @@ async def audio_upload(file:UploadFile= File(...)):
     doc = Document()
     doc.add_heading('Meeting Minutes', 0)
 
-    # Add the content
     for line in output.content.split('\n'):
         if line.strip():
             if line.startswith('**') and line.endswith('**'):
-                # Headers
+               
                 doc.add_heading(line.strip('*'), level=1)
             else:
-                # Regular paragraphs
+               
                 doc.add_paragraph(line)
 
-    # Save the document
+   
     doc_file = "meeting_minutes.docx"
     doc.save(doc_file)
 
